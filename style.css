@@ -484,6 +484,225 @@ ul {
   margin-bottom: 0.75rem;
 }
 
+/* Daftar Member */
+.daftar {
+  background: var(--gray-50);
+}
+
+.daftar-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.form-member,
+.daftar-side > div {
+  background: var(--white);
+  border: 1px solid var(--gray-100);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  box-shadow: var(--shadow);
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--green-900);
+  margin-bottom: 0.35rem;
+}
+
+.form-group label span {
+  color: #c0392b;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 0.7rem 0.9rem;
+  font-family: var(--font);
+  font-size: 0.95rem;
+  border: 1px solid var(--gray-100);
+  border-radius: 8px;
+  background: var(--white);
+  color: var(--gray-800);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--green-500);
+  box-shadow: 0 0 0 3px rgba(46, 204, 135, 0.2);
+}
+
+.form-group input:invalid:not(:placeholder-shown),
+.form-group textarea:invalid:not(:placeholder-shown) {
+  border-color: #e74c3c;
+}
+
+.form-check {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  font-size: 0.85rem;
+  color: var(--gray-600);
+  margin: 1rem 0 1.25rem;
+  cursor: pointer;
+}
+
+.form-check input {
+  margin-top: 0.2rem;
+  accent-color: var(--green-700);
+}
+
+.btn-block {
+  width: 100%;
+}
+
+.form-note {
+  margin-top: 0.85rem;
+  font-size: 0.75rem;
+  color: var(--gray-600);
+  text-align: center;
+}
+
+.form-note code {
+  font-size: 0.7rem;
+  background: var(--green-100);
+  padding: 0.1rem 0.35rem;
+  border-radius: 4px;
+  color: var(--green-800);
+}
+
+.daftar-side {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.daftar-benefits h3,
+.cek-member h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--green-900);
+  margin-bottom: 0.85rem;
+}
+
+.daftar-benefits ul li {
+  position: relative;
+  padding-left: 1.4rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--gray-600);
+}
+
+.daftar-benefits ul li::before {
+  content: "★";
+  position: absolute;
+  left: 0;
+  color: var(--gold);
+  font-size: 0.75rem;
+}
+
+.form-check-member .form-group {
+  margin-bottom: 0.75rem;
+}
+
+.check-result {
+  margin-top: 1rem;
+  padding: 1rem;
+  border-radius: var(--radius);
+  font-size: 0.9rem;
+}
+
+.check-result.is-error {
+  background: #fdecea;
+  color: #922b21;
+  border: 1px solid #f5b7b1;
+}
+
+.check-result.is-success {
+  background: var(--green-100);
+  color: var(--green-900);
+  border: 1px solid var(--green-500);
+}
+
+.result-title {
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+.result-dl {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.35rem 1rem;
+  font-size: 0.85rem;
+}
+
+.result-dl dt {
+  font-weight: 600;
+  color: var(--green-800);
+}
+
+.result-dl dd {
+  margin: 0;
+}
+
+.status-aktif {
+  color: var(--green-700);
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.register-success {
+  background: linear-gradient(135deg, var(--green-800), var(--green-700));
+  color: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.success-label {
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.success-id {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.success-id strong {
+  color: var(--gold);
+  letter-spacing: 0.05em;
+}
+
+.success-hint {
+  font-size: 0.8rem;
+  opacity: 0.9;
+}
+
+#btn-submit:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
 /* Kontak */
 .kontak-box {
   display: grid;
@@ -610,8 +829,15 @@ a.kontak-item:hover {
   }
 
   .tentang-grid,
-  .kontak-box {
+  .kontak-box,
+  .daftar-grid,
+  .form-row {
     grid-template-columns: 1fr;
+  }
+
+  .form-member,
+  .daftar-side > div {
+    padding: 1.5rem;
   }
 
   .kontak-box {

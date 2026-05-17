@@ -26,6 +26,7 @@
         <li><a href="#tentang">Tentang</a></li>
         <li><a href="#layanan">Layanan</a></li>
         <li><a href="#lokasi">Lokasi</a></li>
+        <li><a href="#daftar">Daftar Member</a></li>
         <li><a href="#kontak" class="btn-nav">Hubungi</a></li>
       </ul>
     </nav>
@@ -43,7 +44,7 @@
         </p>
         <div class="hero-actions">
           <a href="#lokasi" class="btn btn-primary">Lihat Lokasi Toko</a>
-          <a href="#layanan" class="btn btn-outline">Layanan Kami</a>
+          <a href="#daftar" class="btn btn-outline">Daftar Member</a>
         </div>
         <div class="hero-stats">
           <div class="stat">
@@ -146,6 +147,106 @@
       </div>
     </section>
 
+    <section class="section daftar" id="daftar">
+      <div class="container">
+        <header class="section-header">
+          <h2>Daftar Member NUMART</h2>
+          <p>Gratis! Dapatkan nomor member, kumpulkan poin, dan nikmati promo khusus anggota.</p>
+        </header>
+
+        <div class="daftar-grid">
+          <form class="form-member" id="form-register" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="nama">Nama Lengkap <span>*</span></label>
+                <input type="text" id="nama" name="nama" required minlength="3" placeholder="Contoh: Ahmad Fauzi" autocomplete="name">
+              </div>
+              <div class="form-group">
+                <label for="email">Email <span>*</span></label>
+                <input type="email" id="email" name="email" required placeholder="nama@email.com" autocomplete="email">
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="telepon">No. WhatsApp / Telepon <span>*</span></label>
+                <input type="tel" id="telepon" name="telepon" required pattern="[0-9+\s\-]{10,18}" placeholder="08xxxxxxxxxx" autocomplete="tel">
+              </div>
+              <div class="form-group">
+                <label for="kecamatan">Kecamatan <span>*</span></label>
+                <select id="kecamatan" name="kecamatan" required>
+                  <option value="">— Pilih kecamatan —</option>
+                  <option value="Sawangan">Sawangan</option>
+                  <option value="Borobudur">Borobudur</option>
+                  <option value="Srumbung">Srumbung</option>
+                  <option value="Tegalrejo">Tegalrejo</option>
+                  <option value="Mungkid">Mungkid</option>
+                  <option value="Salam">Salam</option>
+                  <option value="Lainnya">Lainnya</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="alamat">Alamat Lengkap <span>*</span></label>
+              <textarea id="alamat" name="alamat" required minlength="5" rows="3" placeholder="Jl. ..., RT/RW, Desa/Kelurahan"></textarea>
+            </div>
+
+            <div class="form-group">
+              <label for="gerai">Gerai NUMART Favorit</label>
+              <select id="gerai" name="gerai">
+                <option value="">— Opsional —</option>
+                <option value="NUMART Sawangan">NUMART Sawangan</option>
+                <option value="NUMART Borobudur">NUMART Borobudur</option>
+                <option value="NUMART Srumbung">NUMART Srumbung</option>
+                <option value="NUMART Tegalrejo">NUMART Tegalrejo</option>
+              </select>
+            </div>
+
+            <label class="form-check">
+              <input type="checkbox" id="setuju" name="setuju" required>
+              <span>Saya setuju data digunakan untuk program loyalitas NUMART Kab. Magelang.</span>
+            </label>
+
+            <button type="submit" class="btn btn-primary btn-block" id="btn-submit">
+              Daftar Sekarang
+            </button>
+            <p class="form-note">Data disimpan di <code>data/members.json</code> (database statis, tanpa MySQL).</p>
+          </form>
+
+          <aside class="daftar-side">
+            <div class="daftar-benefits">
+              <h3>Keuntungan Member</h3>
+              <ul>
+                <li>Nomor member unik untuk transaksi</li>
+                <li>Kumpulkan poin setiap belanja</li>
+                <li>Info promo & diskon khusus member</li>
+                <li>Prioritas layanan di gerai favorit</li>
+              </ul>
+            </div>
+
+            <div class="cek-member">
+              <h3>Cek Status Member</h3>
+              <form id="form-check" class="form-check-member" novalidate>
+                <div class="form-group">
+                  <label for="cek-telepon">No. Telepon atau ID Member</label>
+                  <input type="text" id="cek-telepon" placeholder="08xxxxxxxxxx atau NUM-2026-0001">
+                </div>
+                <button type="submit" class="btn btn-outline btn-block">Cek Member</button>
+              </form>
+              <div id="check-result" class="check-result" hidden></div>
+            </div>
+
+            <div id="register-success" class="register-success" hidden>
+              <p class="success-label">Registrasi Berhasil!</p>
+              <p class="success-id">ID Member: <strong id="success-member-id"></strong></p>
+              <p class="success-hint">Simpan ID ini. Tunjukkan saat berbelanja di gerai NUMART.</p>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
     <section class="section kontak" id="kontak">
       <div class="container kontak-box">
         <div class="kontak-text">
@@ -177,6 +278,6 @@
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <script type="module" src="js/app.js"></script>
 </body>
 </html>
